@@ -75,6 +75,6 @@ df['desc_len'] = df['Job Description'].apply(lambda x: len(x))
 df['Competitors'] = df['Competitors'].apply(lambda x: len(x.split(',')) if x != '-1' else 0)
 df['Company'] = df['Company Name'].apply(lambda x: x.replace('\n',''))
 
-
-
+df_out = df.drop(['job_st'], axis =1)
+df_out.to_csv('cleaned_data.csv',index = False)
 
