@@ -65,8 +65,8 @@ from sklearn.model_selection import GridSearchCV
 parameters = {'n_estimators':range(10,300,10), 'criterion':('mse','mae'), 'max_features':('auto','sqrt','log2')}
 
 gs = GridSearchCV(rf,parameters,scoring='neg_mean_absolute_error',cv=3)
-gs.fit(X_train,Y_train)
-
+gs.fit(X_train,y_train)
+ 
 gs.best_score_
 gs.best_estimator_
 
